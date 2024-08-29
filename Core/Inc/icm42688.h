@@ -71,6 +71,9 @@ enum icm42688_godr
     NUM_ICM42688_GODR
 };
 
+
+
+
 #define LSB_ACC_16G		0.0047856934f
 #define LSB_ACC_8G		0.0023928467f
 #define LSB_ACC_4G		0.0011964233f
@@ -82,7 +85,6 @@ enum icm42688_godr
 #define LSB_GYRO_500_R	0.00026631611f
 #define LSB_GYRO_250_R	0.00013315805f
 #define LSB_GYRO_125D_R	0.000066579027f
-
 
 #define ICM42688_ID						 0x47
 #define ICM42688_DEVICE_CONFIG             0x11

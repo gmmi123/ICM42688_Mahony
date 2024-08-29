@@ -3,7 +3,7 @@
 <title>Static Call Graph - [STM32Icm42688\STM32Icm42688.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM32Icm42688\STM32Icm42688.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Thu Aug 29 18:32:43 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Thu Aug 29 20:35:08 2024
 <BR><P>
 <H3>Maximum Stack Usage =        348 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -875,8 +875,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[99]"></a>__aeabi_errno_addr</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__read_errno
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<BR><BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__read_errno
 </UL>
 
 <P><STRONG><a name="[155]"></a>__errno$intlibspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text), UNUSED)
@@ -1072,7 +1072,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_MahonyAngle
 </UL>
 
-<P><STRONG><a name="[ba]"></a>Get_MahonyAngle</STRONG> (Thumb, 624 bytes, Stack size 24 bytes, icm42688.o(.text.Get_MahonyAngle))
+<P><STRONG><a name="[ba]"></a>Get_MahonyAngle</STRONG> (Thumb, 640 bytes, Stack size 24 bytes, icm42688.o(.text.Get_MahonyAngle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 300<LI>Call Chain = Get_MahonyAngle &rArr; Mahony_update &rArr; MahonyAHRSupdateIMU &rArr; invSqrt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Mahony_computeAngles
@@ -1375,7 +1375,7 @@ Global Symbols
 <P><STRONG><a name="[2]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.HardFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[ec]"></a>Icm42688_Init</STRONG> (Thumb, 346 bytes, Stack size 80 bytes, icm42688.o(.text.Icm42688_Init))
+<P><STRONG><a name="[ec]"></a>Icm42688_Init</STRONG> (Thumb, 348 bytes, Stack size 80 bytes, icm42688.o(.text.Icm42688_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = Icm42688_Init &rArr; icm42688_writeReg &rArr; icm42688_write_reg &rArr; Icm_Spi_ReadWriteNbytes &rArr; hal_Spi1_ReadWriteByte &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay

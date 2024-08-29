@@ -32,7 +32,7 @@ I (..\Core\Inc\spi.h)(0x66BF5966)
 I (..\Core\Inc\tim.h)(0x66BF739E)
 I (..\Core\Inc\usart.h)(0x66CEE1F6)
 I (..\Core\Inc\gpio.h)(0x66BF5966)
-I (..\Core\Inc\icm42688.h)(0x66D04BD6)
+I (..\Core\Inc\icm42688.h)(0x66D06094)
 I (..\Core\Inc\OLED.h)(0x616ED05C)
 I (..\Core\Inc\Delay.h)(0x66CF01D3)
 I (..\Core\Inc\MahonyAHRS.h)(0x66D04BD6)
@@ -646,8 +646,8 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x66BF5948)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x66BF5948)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x66BF5948)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x66BF5948)
-F (..\Core\Src\icm42688.c)(0x66D04E4A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_STM32Icm42688-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.15.0/Include-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.15.0/PrivateInclude-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/27991/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4-o stm32icm42688/icm42688.o -MMD)
-I (..\Core\Inc\icm42688.h)(0x66D04BD6)
+F (..\Core\Src\icm42688.c)(0x66D06AFB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_STM32Icm42688-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.15.0/Include-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.15.0/PrivateInclude-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/27991/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4-o stm32icm42688/icm42688.o -MMD)
+I (..\Core\Inc\icm42688.h)(0x66D06094)
 I (..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x66BF5945)
 I (..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x66BF5945)
 I (..\Drivers\CMSIS\Include\core_cm4.h)(0x66BF5948)
@@ -676,7 +676,7 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x66BF5948)
 I (..\Core\Inc\spi.h)(0x66BF5966)
 I (..\Core\Inc\main.h)(0x66C058CC)
 I (..\Core\Inc\MahonyAHRS.h)(0x66D04BD6)
-F (..\Core\Inc\icm42688.h)(0x66D04BD6)()
+F (..\Core\Inc\icm42688.h)(0x66D06094)()
 F (..\Core\Inc\user_lib.h)(0x66C08B4F)()
 F (..\Core\Src\user_lib.c)(0x6657F5A2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_STM32Icm42688-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.15.0/Include-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.15.0/PrivateInclude-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/27991/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4-o stm32icm42688/user_lib.o -MMD)
 I (..\Core\Inc\user_lib.h)(0x66C08B4F)
@@ -818,7 +818,7 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x66BF5948)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x66BF5948)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x66BF5948)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x66BF5948)
-I (..\Core\Inc\icm42688.h)(0x66D04BD6)
+I (..\Core\Inc\icm42688.h)(0x66D06094)
 I (..\Core\Inc\spi.h)(0x66BF5966)
 F (..\Core\Inc\Interrupt.h)(0x66D04BD6)()
 F (..\Core\Src\system_stm32f4xx.c)(0x66BF5945)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_STM32Icm42688-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.15.0/Include-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.15.0/PrivateInclude-IC:/Users/27991/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/27991/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4-o stm32icm42688/system_stm32f4xx.o -MMD)

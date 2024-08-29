@@ -2,7 +2,7 @@
 #include "spi.h"
 #include "MahonyAHRS.h"
 
-
+#define correct_Time_define 1000    //上电去0飘 1000次取平均
 /*接口*/
 /*用户CS接口*/
 #define SPI_SCL3300_CS_LOW() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_11,0)
@@ -27,7 +27,8 @@ float GyroCorrected[3]={0};//已经校准完的值
 float AccelCorrected[3]={0};//已经校准完的值
 float icm42688_acc_x, icm42688_acc_y, icm42688_acc_z  ;// ICM42688加速度原始数据       
 float icm42688_gyro_x, icm42688_gyro_y, icm42688_gyro_z ; // ICM42688角速度原始速度数据
-
+float gyro_correct[3]={0};
+uint32_t correct_times=0;
 /*面向ICM42688的spi读写函数封装*/
 /*使用pBuffer进行数据交换*/
 void Icm_Spi_ReadWriteNbytes(uint8_t* pBuffer, uint8_t len)
@@ -213,7 +214,7 @@ int8_t Icm42688_Init(void)
 	icm42688_writeReg(0x76,0x00);
 	/*电源管理*/
 	icm42688_writeReg(0x4E,0x0F);//ACC GYRO LowNoise Mode
-	HAL_Delay(30);
+	HAL_Delay(5000);
 	return 0;
 }
 
@@ -241,37 +242,43 @@ void Get_Gyro_ICM42688(void)
 /*对ICM42688进行数据处理解算出角度*/
 void Get_MahonyAngle(float* Roll,float* Pitch,float * Yaw)
 {
+	static char State=1;
 	Get_Acc_ICM42688();//获取陀螺仪原始数据
 	Get_Gyro_ICM42688();
-	
-	if(icm42688_gyro_x<60&&icm42688_gyro_x>-60&&		//减去陀螺仪较小的角速度,减少漂移
-			icm42688_gyro_y<60&&icm42688_gyro_y>-60&&	
-				icm42688_gyro_z<100&&icm42688_gyro_z>-100)
-	{
-			icm42688_gyro_x=0;
-
-			icm42688_gyro_y=0;
-
-			icm42688_gyro_z=0;
-	}
-	
 	GyroCorrected[0] = ((float)icm42688_gyro_x + GyroCal[0]) * LSB_ACC_GYRO[1];
 	GyroCorrected[1] = ((float)icm42688_gyro_y + GyroCal[1]) * LSB_ACC_GYRO[1];//对原始数据进行校准,并且转换为标准数据
 	GyroCorrected[2] = ((float)icm42688_gyro_z + GyroCal[2]) * LSB_ACC_GYRO[1];	
 	AccelCorrected[0] = ((float)icm42688_acc_x + AccelCal[0]) * LSB_ACC_GYRO[0];
 	AccelCorrected[1] = ((float)icm42688_acc_y + AccelCal[1]) * LSB_ACC_GYRO[0];
 	AccelCorrected[2] = ((float)icm42688_acc_z + AccelCal[2]) * LSB_ACC_GYRO[0];
-	
-	if(first_mahony==0)//Mahony初始化
+	if(State==1)//
 	{
-	  first_mahony++;
-	  MahonyAHRSinit(AccelCorrected[0],AccelCorrected[1],AccelCorrected[2],0,0,0);  
+		gyro_correct[0]+= GyroCorrected[0];
+		gyro_correct[1]+= GyroCorrected[1];
+		gyro_correct[2]+= GyroCorrected[2];
+		correct_times++;
+		if(correct_times>=correct_Time_define)
+		{
+		  gyro_correct[0]/=correct_Time_define;
+		  gyro_correct[1]/=correct_Time_define;
+		  gyro_correct[2]/=correct_Time_define;
+		  State=2; //go to 2 state
+		}
+	
 	}
-	/*传入标准数据，进行数据更新*/
-	Mahony_update(GyroCorrected[0],GyroCorrected[1],GyroCorrected[2],AccelCorrected[0],AccelCorrected[1],AccelCorrected[2],0,0,0);
-    Mahony_computeAngles();//计算角度
-	*Roll = roll_mahony;
-	*Pitch = pitch_mahony;
-	*Yaw = yaw_mahony;
+	if(State==2)
+	{
+		if(first_mahony==0)//Mahony初始化
+		{
+		  first_mahony++;
+		  MahonyAHRSinit(AccelCorrected[0],AccelCorrected[1],AccelCorrected[2],0,0,0);  
+		}
+		/*传入标准数据，进行数据更新*/
+		Mahony_update(GyroCorrected[0]-gyro_correct[0],GyroCorrected[1]-gyro_correct[1],GyroCorrected[2]-gyro_correct[2],AccelCorrected[0],AccelCorrected[1],AccelCorrected[2],0,0,0);
+		Mahony_computeAngles();//计算角度
+		*Roll = roll_mahony;
+		*Pitch = pitch_mahony;
+		*Yaw = yaw_mahony;
+	}
 }
 
